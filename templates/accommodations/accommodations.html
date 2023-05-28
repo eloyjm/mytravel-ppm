@@ -1,0 +1,17 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}<h1>Accommodations</h1>
+
+{% for accommodation in accommodations %}
+
+<div class="">
+
+    <a href="{% url 'accommodation_detail' accommodation.id %}">
+        <h3>{{accommodation.name}}</h3>
+    </a>
+
+</div>
+
+{% endfor %}
+
+{% endblock %}

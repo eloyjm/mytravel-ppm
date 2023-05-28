@@ -1,0 +1,25 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+<h1>{{destination}}</h1>
+<h5>{{destination.country}}</h5>
+
+
+{% if accommodations %}
+<h3>Accommodations:</h3>
+
+{% for accommodation in accommodations %}
+
+<article class="">
+
+    <a href="{% url 'accommodation_detail' accommodation.id %}">
+        <h4>{{accommodation.name}}</h4>
+    </a>
+
+</article>
+
+{% endfor %}
+{% endif %}
+
+
+{% endblock %}

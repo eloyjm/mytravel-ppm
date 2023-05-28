@@ -1,0 +1,18 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+<h1>Destinations</h1>
+
+{% for destination in destinations %}
+
+<div class="">
+
+    <a href="{% url 'destination_detail' destination.id %}">
+        <h3>{{destination.name}}</h3>
+    </a>
+
+</div>
+
+{% endfor %}
+
+{% endblock %}

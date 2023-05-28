@@ -1,0 +1,39 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+
+<h1>{{itinerary}}</h1>
+<h5>Description:</h5> {{itinerary.description}}
+<h5>Start Date:</h5> {{itinerary.startDate}}
+<h5>Finish Date:</h5> {{itinerary.finishDate}}
+
+<h5>DESTINATIONS:</h5>
+{% for destination in destinations %}
+<div class="">
+    <a href="{% url 'destination_detail' destination.id %}">
+        <h5>{{destination}}</h5>
+    </a>
+</div>
+
+{% endfor %}
+
+<h5>ACCOMMODATIONS:</h5>
+{% for accommodation in accommodations %}
+<div class="">
+    <a href="{% url 'accommodation_detail' accommodation.id %}">
+        <h5>{{accommodation}}</h5>
+    </a>
+</div>
+
+{% endfor %}
+
+<br>
+<div>
+    <p>
+        <a class="btn btn-primary" href="{% url 'edit_itinerary' itinerary.pk %}">Edit</a>
+        <a class="btn btn-primary" href="{% url 'delete_itinerary' itinerary.pk %}">Delete</a>
+    </p>
+    <p><a class="btn btn-primary" href="{% url 'itineraries' %}">Back to all Itineraries</a></p>
+</div>
+
+{% endblock %}
