@@ -7,7 +7,7 @@ pip install -r requirements.txt
 
 if [[ $CREATE_SUPERUSER ]];
 then
-  python mytravel/manage.py createsuperuser --no-input
+  python manage.py createsuperuser --no-input
 fi
 
 python manage.py collectstatic --no-input
